@@ -34,8 +34,12 @@ func (arr *DynamicArray) resize(elements int) int {
 	return arr.size
 }
 
-func (arr *DynamicArray) Size() int {
+func (arr *DynamicArray) GetSize() int {
 	return arr.size
+}
+
+func (arr *DynamicArray) GetCapacity() int {
+	return arr.capacity
 }
 
 func (arr *DynamicArray) Add() int {
