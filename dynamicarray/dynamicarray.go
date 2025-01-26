@@ -1,5 +1,6 @@
 package dynamicarray
 
+// This will only work for integers for now
 type DynamicArray struct {
 	data     *[10]int
 	capacity int
@@ -14,7 +15,7 @@ func NewDynamicArray() *DynamicArray {
 	}
 }
 
-func NewDynamicArrayFromCapacity(capacity int) *DynamicArray {
+func NewDynamicArrayWithCapacity(capacity int) *DynamicArray {
 	return &DynamicArray{
 		data:     new([10]int),
 		capacity: capacity,
@@ -48,4 +49,11 @@ func (arr *DynamicArray) Add() int {
 
 func (arr *DynamicArray) Remove() int {
 	return arr.size
+}
+
+func (arr *DynamicArray) Get(i int) int {
+	if i < 0 && i > arr.size {
+		panic("Out of bounds access!")
+	}
+	return arr.data[i]
 }
